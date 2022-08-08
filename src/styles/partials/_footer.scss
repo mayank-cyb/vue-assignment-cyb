@@ -1,0 +1,24 @@
+.footer {
+    font-size: cRems(13px);
+    background-color: white;
+    color: $colorBlack;
+    padding: 3rem 0;
+    text-align: center;
+    &-list {
+      color: $colorBlack;
+      list-style-type: none;
+      margin: 0 auto cRems(30px);
+      padding: 0;
+      li {
+        color: $colorBlack;
+        display: inline-block;
+        padding: 0 cRems(21px);
+        font-family: $primaryCopy;
+        font-size: cRems(13px);
+      }
+    }
+    p {
+      font-size: cRems(13px);
+      margin-bottom: cRems(19px);
+    }
+  }

@@ -1,0 +1,13 @@
+{
+    "age_requirement": "<p>You must be at least 21 years of age to enter and a resident of the U.S. (including D.C.).</p>",
+    "already_registered": "Returning?",
+    "alternate_login_copy": "<a href=\"#\" id=\"alternate_login\" onclick=\"show_alternate_login_form(this); return false;\">or, click here to enter using your email address.</a>",
+    "body_copy": "<p>We're challenging you to walk at least 30 minutes every single day! Enter now to earn a chance to win the Grand Prize Spa Weekend and complete other fun fitness activities.</p>",
+    "disclaimer": "<p>By clicking here you agree to the <a href=\"rules.html\" rel=\"popup\" class=\"nowrap\" data-formelementid=\"SWEEPS-LNK-CLK-OFFICIAL_RULES\">Official Rules</a>.</p>",
+    "error_copy": "Sorry, we were experiencing brief technical difficulties. Please try re-submitting the form again.",
+    "headline_copy": "LET'S GET FIT TOGETHER",
+    "login_here": "Login here.",
+    "not_registered": "Not registered?",
+    "signup_here": "Sign up here.",
+    "social_not_your_thing": "Social's not your thing? No problem."
+}
