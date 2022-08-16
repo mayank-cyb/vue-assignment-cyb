@@ -1,13 +1,13 @@
 <template>
   <div>
     <TheHeader />
-    <nav>
-      <router-link to="/prelaunched">Prelaunch</router-link>
+    <nav aria-role="navigation">
+      <router-link to="/prelaunch">Prelaunch</router-link>
       <router-link to="/intro">Launched</router-link>
       <router-link to="/expired">Expired</router-link>
     </nav>
     <main id="container" class="container">
-      <section class="white-section">
+      <section class="main--section">
         <router-view />
       </section>
     </main>

@@ -42,10 +42,14 @@ h2 {
   background: url('~/public/images/bg-wooden.jpg') repeat-y center top / 100%;
 }
 
-.white-section {
+.main--section {
   max-width: cRems(1350px);
   margin: 0 auto;
   background-color: $colorWhite;
   padding: cRems(43px) cRems(70px);
   text-align: center;
+  .reg-thanks & {
+    background: transparent;
+    padding: 0;
+  }
 }
