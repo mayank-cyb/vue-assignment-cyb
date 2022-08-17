@@ -10,6 +10,23 @@
         <div class="content-right">
           <!--h2 class="orange" v-html="pageCopy.headline_step1" />
           <div v-html="pageCopy.body_step1" /-->
+          <p>{{ selectedFitnessGroup }}</p>
+          <div class="radio-set">
+            <base-radio
+              v-for="(radioValue, index) in radioValues"
+              :id="createRadioId(radioValue)"
+              :key="index"
+              :class="`radio-${index + 1}`"
+              name="fitness group"
+              :model-value="radioValue"
+              @change="
+                (value) => {
+                  selectedFitnessGroup = value;
+                }
+              "
+              :label="createRadioId(radioValue)"
+            ></base-radio>
+          </div>
         </div>
       </div>
       <div class="step-2">
@@ -32,21 +49,32 @@
 
 <script>
 import axiosInstance from "@/services/services.js";
+import BaseRadio from "@/components/BaseComponents/BaseRadio.vue";
 
 const container = document.getElementById("container");
 
 export default {
   name: "RegThanksView",
+  components: {
+    BaseRadio,
+  },
   data() {
     return {
       page_name: "reg_thanks",
+      radioValues: ["new soles", "casual walkers", "fit fanatics"],
+      selectedFitnessGroup: "",
       page_copy: "",
     };
   },
   created() {
     this.$watch(
       () => {
-        container.classList.add(this.$route.meta.className);
+        if (this.$route.name == "reg_thanks") {
+          container.classList.add(this.$route.meta.className);
+        } else {
+          return;
+        }
+
         this.fetchData();
       }
       // fetch the data when the view is created and the data is
@@ -71,6 +99,9 @@ export default {
           this.page_copy = response.data;
         })
         .catch((err) => console.error(err));
+    },
+    createRadioId(val) {
+      return val.toLowerCase().split(" ").join("_");
     },
   },
   computed: {

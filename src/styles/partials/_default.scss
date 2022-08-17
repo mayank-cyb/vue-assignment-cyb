@@ -40,6 +40,9 @@ h2 {
   margin: 0 auto;
   padding: cRems(47px) cRems(125px);
   background: url('~/public/images/bg-wooden.jpg') repeat-y center top / 100%;
+  &.reg-thanks {
+    padding: cRems(47px) cRems(50px);
+  }
 }
 
 .main--section {
@@ -49,6 +52,7 @@ h2 {
   padding: cRems(43px) cRems(70px);
   text-align: center;
   .reg-thanks & {
+    max-width: cRems(1500px);
     background: transparent;
     padding: 0;
   }
