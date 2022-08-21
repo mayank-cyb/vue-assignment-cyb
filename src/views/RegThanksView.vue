@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="reg-thanks">
     <!--h2 v-html="pageCopy" /-->
     <div class="steps-wrapper">
       <div class="step-1">
@@ -44,12 +44,14 @@
         <div class="content-bottom"></div>
       </div>
     </div>
+    <the-submit-button routeTo="hub">Submit</the-submit-button>
   </div>
 </template>
 
 <script>
 import axiosInstance from "@/services/services.js";
 import BaseRadio from "@/components/BaseComponents/BaseRadio.vue";
+import TheSubmitButton from "@/components/TheSubmitButton.vue";
 
 const container = document.getElementById("container");
 
@@ -57,6 +59,7 @@ export default {
   name: "RegThanksView",
   components: {
     BaseRadio,
+    TheSubmitButton,
   },
   data() {
     return {
@@ -65,6 +68,10 @@ export default {
       selectedFitnessGroup: "",
       page_copy: "",
     };
+  },
+  beforeRouteLeave(to, from, next) {
+    container.classList.remove(this.$route.meta.className);
+    next();
   },
   created() {
     this.$watch(
