@@ -2,8 +2,8 @@
   <div>
     <TheHeader />
     <nav aria-role="navigation">
-      <router-link to="/prelaunch">Prelaunch</router-link> |
-      <router-link to="/intro">Launched</router-link> |
+      <router-link to="/prelaunch">Prelaunch</router-link>
+      <router-link to="/intro">Launched</router-link>
       <router-link to="/expired">Expired</router-link>
     </nav>
     <main id="container" class="container">

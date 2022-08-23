@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0 auto;
+  max-width: cRems(1600px);
+}
+
+body {
+  color: $colorBlack;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  font-family: $primaryCopy;
+  font-size: cRems(20px);
+  margin-bottom: cRems(49px);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $secondaryCopy;
+}
+h2 {
+  font-size: cRems(40px);
+  line-height: 1;
+  margin-bottom: cRems(35px);
+}
+#container {
+  max-width: cRems(1600px);
+  width: 100%;
+  margin: 0 auto;
+  padding: cRems(47px) cRems(125px);
+  background: url('~/public/images/bg-wooden.jpg') repeat-y center top / 100%;
+  &.reg-thanks {
+    padding: cRems(47px) cRems(50px);
+  }
+}
+
+.main--section {
+  max-width: cRems(1350px);
+  margin: 0 auto;
+  background-color: $colorWhite;
+  padding: cRems(43px) cRems(70px);
+  text-align: center;
+  .reg-thanks & {
+    max-width: cRems(1500px);
+    background: transparent;
+    padding: 0;
+  }
+}

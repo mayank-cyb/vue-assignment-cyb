@@ -1,0 +1,27 @@
+
+
+.btn,
+.button,
+button {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: cRems(250px);
+    border-radius: cRems(10px);
+    border: none;   
+    padding: cRems(20px) cRems(45px);
+    font-size: cRems(32px);
+    font-weight: $bold;
+    font-family: $secondaryCopy;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: $colorWhite;
+    background-color: $colorOrange;
+    &::after {
+        content: '';
+    }
+    &:hover,
+    &:focus {
+        cursor: pointer;
+    }
+
+}
