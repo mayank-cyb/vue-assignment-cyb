@@ -1,57 +1,100 @@
 <template>
   <div class="reg-thanks">
     <!--h2 v-html="pageCopy" /-->
-    <div class="steps-wrapper">
-      <div class="step-1">
-        <div class="content-left">
-          <h2 class="orange" v-html="pageCopy.headline_step1" />
-          <div v-html="pageCopy.body_step1" />
+    <form action="/">
+      <div class="steps-wrapper">
+        <div class="step-1">
+          <div class="content-left">
+            <h2 class="orange" v-html="pageCopy.headline_step1" />
+            <div v-html="pageCopy.body_step1" />
+          </div>
+          <div class="content-right">
+            <p>{{ selectedFitnessGroup }}</p>
+            <div class="radio-group">
+              <div
+                class="radio-set"
+                v-for="(radioValue, index) in radioValues"
+                :key="index"
+              >
+                <base-radio
+                  :id="createRadioId(radioValue)"
+                  :class="`radio-${index + 1}`"
+                  name="fitness group"
+                  :model-value="radioValue"
+                  @change="
+                    (value) => {
+                      selectedFitnessGroup = value;
+                    }
+                  "
+                >
+                  <label :for="createRadioId(radioValue)">
+                    <h3 class="big">
+                      {{ pageCopy.fitness_groups[index].big }}
+                    </h3>
+                    <p class="small">
+                      {{ pageCopy.fitness_groups[index].small }}
+                    </p>
+                  </label>
+                </base-radio>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="content-right">
-          <!--h2 class="orange" v-html="pageCopy.headline_step1" />
-          <div v-html="pageCopy.body_step1" /-->
-          <p>{{ selectedFitnessGroup }}</p>
-          <div class="radio-set">
-            <base-radio
-              v-for="(radioValue, index) in radioValues"
-              :id="createRadioId(radioValue)"
-              :key="index"
-              :class="`radio-${index + 1}`"
-              name="fitness group"
-              :model-value="radioValue"
-              @change="
-                (value) => {
-                  selectedFitnessGroup = value;
-                }
-              "
-              :label="createRadioId(radioValue)"
-            ></base-radio>
+        <div class="step-2">
+          <div class="content-top">
+            <h2 class="orange" v-html="pageCopy.headline_step2" />
+            <div v-html="pageCopy.body_step2" />
+          </div>
+          <div class="content-bottom">
+            <!--base-input
+              type="text"
+              placeholder="First Name"
+              v-model="friendsFname"
+            ></base-input>
+            <base-input
+              type="email"
+              placeholder="Email Address"
+              v-model="friendsEmails"
+            ></base-input-->
+          </div>
+        </div>
+        <div class="step-3">
+          <div class="content-top">
+            <h2 class="orange" v-html="pageCopy.headline_step3" />
+            <div v-html="pageCopy.body_step3" />
+          </div>
+          <div class="content-bottom">
+            <base-checkbox
+              :label="pageCopy.reminder_opt_in"
+              id="reminder_opt_in"
+              :checked="reminderOptinChecked"
+              @change="changeReminderOptin"
+            ></base-checkbox>
+            <base-checkbox
+              :label="pageCopy.secondary_opt_in"
+              id="secondary_opt_in"
+              :checked="secondaryOptinChecked"
+              @change="changeSecondaryOptin"
+            ></base-checkbox>
+            <base-input
+              type="phone"
+              placeholder="Mobile Number"
+              v-model="phoneNumber"
+            ></base-input>
           </div>
         </div>
       </div>
-      <div class="step-2">
-        <div class="content-top">
-          <h2 class="orange" v-html="pageCopy.headline_step2" />
-          <div v-html="pageCopy.body_step2" />
-        </div>
-        <div class="content-bottom"></div>
-      </div>
-      <div class="step-3">
-        <div class="content-top">
-          <h2 class="orange" v-html="pageCopy.headline_step3" />
-          <div v-html="pageCopy.body_step3" />
-        </div>
-        <div class="content-bottom"></div>
-      </div>
-    </div>
-    <the-submit-button routeTo="hub">Submit</the-submit-button>
+      <the-submit-button routeTo="hub">Submit</the-submit-button>
+    </form>
   </div>
 </template>
 
 <script>
 import axiosInstance from "@/services/services.js";
 import BaseRadio from "@/components/BaseComponents/BaseRadio.vue";
+import BaseInput from "@/components/BaseComponents/BaseInput.vue";
 import TheSubmitButton from "@/components/TheSubmitButton.vue";
+import BaseCheckbox from "@/components/BaseComponents/BaseCheckbox.vue";
 
 const container = document.getElementById("container");
 
@@ -59,14 +102,21 @@ export default {
   name: "RegThanksView",
   components: {
     BaseRadio,
+    BaseInput,
     TheSubmitButton,
+    BaseCheckbox,
   },
   data() {
     return {
+      // friendsFname: [],
+      // friendsEmailAddr: [],
       page_name: "reg_thanks",
       radioValues: ["new soles", "casual walkers", "fit fanatics"],
       selectedFitnessGroup: "",
+      phoneNumber: "",
       page_copy: "",
+      reminderOptinChecked: false,
+      secondaryOptinChecked: false,
     };
   },
   beforeRouteLeave(to, from, next) {
@@ -109,6 +159,12 @@ export default {
     },
     createRadioId(val) {
       return val.toLowerCase().split(" ").join("_");
+    },
+    changeReminderOptin() {
+      this.reminderOptinChecked = !this.reminderOptinChecked;
+    },
+    changeSecondaryOptin() {
+      this.secondaryOptinChecked = !this.secondaryOptinChecked;
     },
   },
   computed: {

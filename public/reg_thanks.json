@@ -1,23 +1,37 @@
 {
-    "body_copy": "<p>Now that you've earned your first sweepstakes entry it's time to choose your group, invite some friends and start walking!</p>",
-    "body_step1": "<h3>CHOOSE YOUR FITNESS GROUP</h3> <p>Pick a group that best fits your current fitness level.  <br /> <p style=\"font-size:14px;\">(simply click the image of the group you want to join)</p></p>",
-    "body_step2": "<h3>INVITE A BUDDY</h3> <h5>(optional)</h5> <p>Pick a friend to walk with you, near or far! This could be a best bud, sibling, child, or even a neighbor—whoever helps keep you motivated!</p>",
-    "body_step3":
-    "<h3>SIGN UP FOR REMINDERS</h3> <h5>(optional)</h5> <p>Need an extra push? Sign up to receive reminders throughout the Challenge to keep you on track. We'll remind you to get out and log your time spent walking.</p>",
-    "fitneess_error": "You must select a team to match your fitness level.",
-    "headline_copy": "YOU ARE ENTERED",
-    "headline_step1": "STEP 1:",
-    "headline_step2": "STEP 2:",
-    "headline_step3": "STEP 3:",
-    "modals": {
-        "buddies": {
-            "body_copy": "<p>Exercising with a friend is a proven way to stay on track towards your goals. Invite your friends to join the Fit & Fun Health Challenge and cheer each other on!</p> <p>If a buddy accepts your invitation, you'll see when they log their <br class='large-only'> walking time and complete activities—likewise, they'll see your activity. <br class='large-only'> It's all about inspiring and supporting one another to succeed!</p>",
-            "headline_copy": "WHO ARE MY BUDDIES?"
-        }
-    },
-  
-  "fitness_group": {
-    "body_copy": "<p>We recognize everyone is on a different fitness journey. That's why we wanted to make sure you don't feel left behind—or held back. Choose a group that best fits your fitness level. Seeing your group's stats on your dashboard will inspire you and push you even further!</p><p><strong>Note:</strong> Once you choose your group, you won't be able to change it.</p>",
-    "headline_copy": "CHOOSING A FITNESS GROUP"
-}
+	"body_copy": "<p>Now that you've earned your first sweepstakes entry it's time to choose your group, invite some friends and start walking!</p>",
+	"body_step1": "<h3>CHOOSE YOUR FITNESS GROUP</h3> <p>Pick a group that best fits your current fitness level.  <br /> <p style=\"font-size:14px;\">(simply click the image of the group you want to join)</p></p>",
+	"body_step2": "<h3>INVITE A BUDDY</h3> <h5>(optional)</h5> <p>Pick a friend to walk with you, near or far! This could be a best bud, sibling, child, or even a neighbor—whoever helps keep you motivated!</p>",
+	"body_step3": "<h3>SIGN UP FOR REMINDERS</h3> <h5>(optional)</h5> <p>Need an extra push? Sign up to receive reminders throughout the Challenge to keep you on track. We'll remind you to get out and log your time spent walking.</p>",
+	"fitneess_error": "You must select a team to match your fitness level.",
+	"headline_copy": "YOU ARE ENTERED",
+	"headline_step1": "STEP 1:",
+	"headline_step2": "STEP 2:",
+	"headline_step3": "STEP 3:",
+	"modals": {
+		"buddies": {
+			"body_copy": "<p>Exercising with a friend is a proven way to stay on track towards your goals. Invite your friends to join the Fit & Fun Health Challenge and cheer each other on!</p> <p>If a buddy accepts your invitation, you'll see when they log their <br class='large-only'> walking time and complete activities—likewise, they'll see your activity. <br class='large-only'> It's all about inspiring and supporting one another to succeed!</p>",
+			"headline_copy": "WHO ARE MY BUDDIES?"
+		}
+	},
+	"fitness_group": {
+		"body_copy": "We recognize everyone is on a different fitness journey. That's why we wanted to make sure you don't feel left behind—or held back. Choose a group that best fits your fitness level. Seeing your group's stats on your dashboard will inspire you and push you even further!</p><p><strong>Note:</strong> Once you choose your group, you won't be able to change it.",
+		"headline_copy": "CHOOSING A FITNESS GROUP"
+	},
+	"fitness_groups": [
+		{
+			"big": "NEW SOLES",
+			"small": "It's been a long time since you've laced up—but you're excited to get started."
+		},
+		{
+			"big": "FIT FANATICS",
+			"small": "Working out is already part of your lifestyle and you wouldn't have it any other way."
+		},
+		{
+			"big": "CASUAL WALKERS",
+			"small": "You move around quite a bit and you're not afraid of breaking a sweat every now and then."
+		}
+	],
+	"reminder_opt_in": "Yes! Please send me Daily <strong>Email</strong> Reminders. <em>Optional</em>",
+	"secondary_opt_in": "YES! Send me the <strong>AARP Girlfriend Newsletter</strong>. <em>Optional.</em>"
 }

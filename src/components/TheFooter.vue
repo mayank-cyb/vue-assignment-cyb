@@ -42,7 +42,6 @@ export default {
       axiosInstance
         .get("/footer.json")
         .then((response) => {
-          console.log(response.data);
           this.copy = response.data;
         })
         .catch((err) => console.error(err));

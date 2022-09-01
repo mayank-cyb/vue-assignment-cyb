@@ -1,31 +1,31 @@
 <template>
-  <div class="radio-wrapper">
+  <div class="checkbox">
     <input
-      type="radio"
-      :value="modelValue"
+      type="checkbox"
       @change="$emit('change', $event.target.value)"
+      :id="id"
+      :checked="checked"
       v-bind="$attrs"
     />
-    <label v-if="label" :for="label">{{ label }}</label>
-    <slot v-else></slot>
+    <label v-if="label" :for="id" v-html="label" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "BaseRadio",
+  name: "BaseCheckbox",
   inheritAttrs: false,
   props: {
+    checked: {
+      type: Boolean,
+      default: false,
+    },
     label: {
       type: String,
     },
-    modelValue: {
+    id: {
       type: String,
     },
-  },
-  emits: ["change"],
-  created() {
-    //console.log(this.$attrs);
   },
 };
 </script>

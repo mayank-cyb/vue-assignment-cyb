@@ -61,7 +61,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/HubView.vue"),
   },
   {
-    path: "/:lifecycle_phase",
+    path: "/:lifecycle_phase?",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/LifecycleView.vue"),
   },
@@ -72,7 +72,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/ErrorView.vue"),
   },
   {
-    path: "/:pathMatches(.*)",
+    path: "/:pathMatches(.*)*",
     redirect: "/error",
   },
 ];
